@@ -18,9 +18,16 @@ def test_RegisterPage_valid(setup):
     logger.addHandler(file_handler)
 
     register_page = RegisterPage(setup)
-    register_page.Register(Register_test_data.valid_firstname,Register_test_data.valid_lastname,
-                           Register_test_data.valid_email,Register_test_data.valid_telephone,
-                           Register_test_data.valid_password,Register_test_data.valid_confirmPassword)
+
+    register_page.enter_firstname(Register_test_data.valid_firstname)
+    register_page.enter_lastname(Register_test_data.valid_lastname)
+    register_page.enter_email(Register_test_data.valid_email)
+    register_page.enter_telephone(Register_test_data.valid_telephone)
+    register_page.enter_password(Register_test_data.valid_password)
+    register_page.enter_confirmPassword(Register_test_data.valid_confirmPassword)
+
+    register_page.click_elements()
+
     register_page.control.implicitly_wait(5)
     logger.info("Input data done")
     register_page.capture_screenshot("RegisterPage_test_valid")
@@ -39,9 +46,16 @@ def test_RegisterPage_invalid(setup):
     logger.addHandler(file_handler)
 
     register_page = RegisterPage(setup)
-    register_page.Register(Register_test_data.invalid_firstname,Register_test_data.invalid_lastname,
-                           Register_test_data.invalid_email,Register_test_data.invalid_telephone,
-                           Register_test_data.invalid_password,Register_test_data.invalid_confirmPassword)
+
+    register_page.enter_firstname(Register_test_data.invalid_firstname)
+    register_page.enter_lastname(Register_test_data.invalid_lastname)
+    register_page.enter_email(Register_test_data.invalid_email)
+    register_page.enter_telephone(Register_test_data.invalid_telephone)
+    register_page.enter_password(Register_test_data.invalid_password)
+    register_page.enter_confirmPassword(Register_test_data.invalid_confirmPassword)
+
+    register_page.click_elements()
+
     register_page.control.implicitly_wait(5)
     logger.info("Input data done")
     time.sleep(3)

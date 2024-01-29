@@ -1,8 +1,9 @@
 import pytest
 from selenium import webdriver
-from POM.utils.config import Register_url,Browser
+from POM.utils.config import Register_url, Browser
 
-@pytest.fixture           ## Decorator called
+
+@pytest.fixture  ## Decorator called
 def setup():
     if Browser == "edge":
         drive = webdriver.Edge()
