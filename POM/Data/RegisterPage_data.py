@@ -1,8 +1,11 @@
+from faker import Faker
+
 class Register_test_data:
+    fake_email = Faker()
     # valid data
     valid_firstname = "ashraf"
     valid_lastname = "nisan"
-    valid_email = "nayan6@mail.com"
+    valid_email = fake_email.email()
     valid_telephone = "01772693406"
     valid_password = "admin123"
     valid_confirmPassword = "admin123"
